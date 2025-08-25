@@ -20,8 +20,3 @@ body::before {
     filter: blur(3px) brightness(0.75);
     z-index: -1;
 }
-
-.center-card {
-    padding: 27px;
-    max-width: 100%;
-}

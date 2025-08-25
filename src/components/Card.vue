@@ -103,3 +103,10 @@ onUnmounted(() => {
 
 
 </script>
+
+<style lang="css" scoped>
+.center-card {
+    padding: 27px;
+    max-width: 100%;
+}
+</style>
