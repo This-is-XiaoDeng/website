@@ -1,5 +1,5 @@
 <template>
-  <div class="center-card shadow bg-dark text-light" style="transition: all;">
+  <div class="center-card shadow bg-dark text-light" id="main-card" style="transition: all;">
     <span id="hello_tip">{{ helloTip }}</span>
     <div v-if="showInfo">
         <p></p>
@@ -25,25 +25,33 @@
             <a target="_blank" class="btn bg-warning" href="https://nezha.thisisxd.top">Network Status</a>
             <a target="_blank" class="btn bg-primary" href="https://github.com/This-is-XiaoDeng">GitHub</a>
         </div>
-        <hr />
-        <h4>Dynamic</h4>
 
-
-
-
-
+        <p></p>
+        <p></p>
+        <GithubDynamic />
     </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import * as xml2js from 'xml2js';
+import { onMounted, onUnmounted, ref } from 'vue';
+import GithubDynamic from './GithubDynamic.vue';
 
 const helloTip = ref("");
 const showInfo = ref(false);
+let setMarginInterval: number;
 
-
+function setCardMargin() {
+    const element = document.getElementById("main-card");
+    if (!element) {
+        return;
+    }
+    const elementHeight = element.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const margin = Math.max((viewportHeight - elementHeight) / 2, 0);
+    element.style.marginTop = `${margin}px`;
+}
 
 function shirokoBirtudayAlert() {
     alert("Today is Sunaōkami Shiroko's birthday, take a screenshot on this alert and share it to 5 groups, Shiroko will appear in your bed at night and invite you to hijack the bank together. I tried, it's fake, I've been called a pedophile and asked to go die. But today is truely Shiroko's birthday.");
@@ -69,7 +77,6 @@ function setHelloTip(text: string, next_action: undefined | VoidFunction = undef
 
 
 
-
 onMounted(async () => {
     showInfo.value = false;
     setHelloTip("👋 Hi, there!", () => {
@@ -81,13 +88,14 @@ onMounted(async () => {
             });
         }, 1200);
     });
-    await getGithubFeed()
+    setMarginInterval = setInterval(setCardMargin, 1);
 })
 
-async function getGithubFeed() {
-    
-}
-
+onUnmounted(() => {
+    if (setMarginInterval) {
+        clearInterval(setMarginInterval);
+    }
+})
 
 
 </script>
