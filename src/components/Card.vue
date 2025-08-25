@@ -44,7 +44,7 @@ import GithubDynamic from './GithubDynamic.vue';
 const helloTip = ref("");
 const showInfo = ref(false);
 const mainCard = ref();
-let setMarginInterval: number;
+let setMarginInterval: NodeJS.Timeout;
 
 function setCardMargin() {
     const element = mainCard.value;
