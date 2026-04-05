@@ -15,8 +15,8 @@
                 <p></p>
                 <ul>
                     <li>Born in 2009, lived in Huizhou for {{ (new Date()).getFullYear() - 2009 }} years.</li>
-                    <li>Amateur developer, mostly use Python and TypeScript.</li>
-                    <li>Playing Conter-Strike 2, War Thunder, Blue Archive and Honkai: Star Rail.</li>
+                    <li>Amateur developer, mostly use Python.</li>
+                    <li>Playing Conter-Strike 2, Blue Archive and Arknights: Endfield.</li>
                     <li>Now creating: <a target="_blank" href="https://github.com/Moonlark-Dev/Moonlark">Moonlark</a></li>
                     <li v-if="isTodayMay16()"><strong>I LOVE Sunaōkami Shiroko.</strong></li>
                 </ul>
