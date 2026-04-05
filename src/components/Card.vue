@@ -14,7 +14,7 @@
                 <span v-else class="badge bg-danger">I ❤ 砂狼シロコ!</span>
                 <p></p>
                 <ul>
-                    <li>Born in 2009, lived in Huizhou for {{ (new Date()).getFullYear() - 2009 }} years.</li>
+                    <li>Born in 2009, lived in Huizhou.</li>
                     <li>Amateur developer, mostly use Python.</li>
                     <li>Playing Conter-Strike 2, Blue Archive and Arknights: Endfield.</li>
                     <li>Now creating: <a target="_blank" href="https://github.com/Moonlark-Dev/Moonlark">Moonlark</a></li>
